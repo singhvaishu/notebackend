@@ -9,16 +9,16 @@ const authMiddleware = require('../middleware/authMiddleware');
 router.post('/todos', authMiddleware, todoController.createTodo);
 
 // Get all To-Dos
-router.get('/', authMiddleware, todoController.getTodos);
+router.get('/todos', authMiddleware, todoController.getTodos);
 
 // Get a single To-Do by ID
-router.get('/:id', authMiddleware, todoController.getTodoById);
+router.get('/todos/:id', authMiddleware, todoController.getTodoById);
 
 // Update a To-Do
-router.put('/:id', authMiddleware, todoController.updateTodo);
+router.put('/todos/:id', authMiddleware, todoController.updateTodo);
 
 // Delete a To-Do
-router.delete('/:id', authMiddleware, todoController.deleteTodo);
+router.delete('/todos/:id', authMiddleware, todoController.deleteTodo);
 
 module.exports = router;
 
